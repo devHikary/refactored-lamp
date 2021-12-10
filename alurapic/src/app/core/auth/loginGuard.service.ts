@@ -8,7 +8,7 @@ const API_URL = 'http://localhost:3000';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class LoginGuardService {
 
   constructor(
     private http: HttpClient,
