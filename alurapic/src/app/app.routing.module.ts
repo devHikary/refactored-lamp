@@ -31,7 +31,7 @@ const routes: Routes = [
         canActivate: [AuthGuard]
     },
     { 
-        path: 'p/:photoid', 
+        path: 'p/:photoId', 
         component: PhotoDetailsComponent ,
     },
     { 
