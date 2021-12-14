@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { PhotoComment } from '../photo-details/photo-comment';
+import { PhotoComment } from '../photo-details/photo-comments/photo-comment';
 
 import { Photo } from "./photo";
 
