@@ -16,14 +16,14 @@
     </li>
   </ul>
   <div class="mt-4">
-    <form [formGroup]="commentGroup">
+    <form [formGroup]="commentForm">
       <div class="input-group">
-        <textarea class="form-control" [formControlName]="comment"></textarea>
+        <textarea class="form-control" formControlName="comment"></textarea>
         <div class="input-group-append">
           <button
             type="submit"
             class="btn btn-primary pull-left"
-            [disabled]="commentFrom.invalid"
+            [disabled]="commentFrom?.invalid"
           >
             Publish
           </button>
