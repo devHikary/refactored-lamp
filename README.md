@@ -1,10 +1,14 @@
 # Curso Angular parte 3
 
-PRIVATE
 
-## API
-npm start
+## 🛠️ Abrir e rodar o projeto
+- Clonar o projeto
+- Entrar na pasta do projeto
+- Instalar as dependências com npm install
 
-
-## Aplicação
-ng s --o
+### API
+- Abrir a pasta API
+- Rodar o comando `npm start`
+### Aplicação
+- Abrir a pasta Alurapic
+- Rodar o comando `ng s --o`
