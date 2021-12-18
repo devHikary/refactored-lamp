@@ -1,5 +1,5 @@
 # Curso Angular parte 3
-
+Curso da plataforma Alura
 
 ## 🛠️ Abrir e rodar o projeto
 - Clonar o projeto
