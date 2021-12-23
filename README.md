@@ -1,4 +1,4 @@
-# Curso Angular parte 3
+# Curso Angular parte 3 e 4
 Curso da plataforma Alura
 
 ## 🛠️ Abrir e rodar o projeto
