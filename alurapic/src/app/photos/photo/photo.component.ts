@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
-const CLOUD = 'http://localhost:3000/imgs/';
+const CLOUD = environment.ApiUrl + '/imgs/';
 @Component({
     selector: 'ap-photo',
     templateUrl: 'photo.component.html'
