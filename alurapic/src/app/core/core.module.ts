@@ -1,3 +1,4 @@
+import { LoadingModule } from './../shared/components/loading/loading.module';
 import { AlertModule } from './../shared/components/alert/alert.module';
 import { NgModule } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
@@ -19,7 +20,8 @@ import { FooterComponent } from './footer/footer.component';
   imports: [
     CommonModule,
     RouterModule,
-    AlertModule
+    AlertModule,
+    LoadingModule
   ],
   providers: [
     {
