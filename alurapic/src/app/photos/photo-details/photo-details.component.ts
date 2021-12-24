@@ -33,6 +33,7 @@ export class PhotoDetailsComponent implements OnInit {
   }
 
   remove(){
+    console.log(this.photoId)
     this.photoService
     .removePhoto(this.photoId)
     .subscribe(() => {

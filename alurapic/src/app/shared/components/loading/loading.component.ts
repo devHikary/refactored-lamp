@@ -1,10 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { Photo } from 'src/app/photos/photo/photo';
-import { PhotoService } from 'src/app/photos/photo/photo.service';
-import { LoadingService } from './loading.service';
+import { Component, OnInit } from "@angular/core";
+import { LoadingService } from "./loading.service";
+import { Observable } from "rxjs";
+import { LoadingType } from "./loading-type";
+import { map } from "rxjs/operators";
 
 @Component({
   selector: 'ap-loading',
@@ -14,20 +12,12 @@ import { LoadingService } from './loading.service';
 export class LoadingComponent implements OnInit {
 
   loading$: Observable<string>;
-  userName: string;
-  photos: Photo
 
-  constructor(
-    private activatedRoute: ActivatedRoute,
-    private photoService: PhotoService,
-    private loadingService: LoadingService
-    ) { }
+  constructor(private loadingService: LoadingService) { }
 
   ngOnInit(): void {
-    this.loadingService.start();
-    this.activatedRoute.params.subscribe(params => {
-      this.userName = params.userName;
-      this.photos = this.activatedRoute.snapshot.data['photos'];
-    });
+    this.loading$ = this.loadingService
+      .getLoading()
+      .pipe(map(loadingType => loadingType.valueOf()))
   }
 }

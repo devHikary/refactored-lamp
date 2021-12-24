@@ -55,7 +55,7 @@ export class PhotoService {
   }
 
   removePhoto(id: number){
-    return this.http.delete(API + '/photos/' + id + '/comments');
+    return this.http.delete(API + '/photos/' + id;
   }
 
   like(id: number){
