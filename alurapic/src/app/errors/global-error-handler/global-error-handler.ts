@@ -1,8 +1,9 @@
 import { UserService } from 'src/app/core/user/user.service';
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { ErrorHandler, Injectable, Injector } from "@angular/core";
-import StackTrace = require('stacktrace-js');
 import { ServerLogService } from './server-log.service';
+import { Router } from '@angular/router';
+import * as StackTrace from 'stacktrace-js';
 
 @Injectable()
 export class GlobalErrorHandler implements ErrorHandler {
@@ -19,6 +20,7 @@ export class GlobalErrorHandler implements ErrorHandler {
     const location = this.injector.get(LocationStrategy);
     const userService = this.injector.get(UserService);
     const serverLogService = this.injector.get(ServerLogService)
+    const router = this.injector.get(Router);
 
     const url = location instanceof PathLocationStrategy
       ? location.path()
@@ -27,6 +29,8 @@ export class GlobalErrorHandler implements ErrorHandler {
     const message = error.message
       ? error.message :
       error.toString();
+
+    router.navigate(['/error']);
 
     StackTrace
       .fromError(error)
