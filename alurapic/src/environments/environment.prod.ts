@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  ApiUrl: 'hrrp://suaapientraaqui'
+  ApiUrl: 'hrrp://suaapientraaqui',
+  serverLog: 'http://apidolog',
 };
