@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { UserService } from '../user/user.service';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { stat } from 'fs';
 
 @Injectable({ providedIn: 'root' })
 export class AuthGuard implements CanActivate {
@@ -15,7 +16,12 @@ export class AuthGuard implements CanActivate {
     state: RouterStateSnapshot): boolean | Observable<boolean> | Promise<boolean> {
 
     if (!this.userService.isLogged()) {
-      this.router.navigate(['']);
+      this.router.navigate([''],
+      {
+        queryParams:{
+          formUrl: state.url
+        }
+      });
       return false;
     }
     return true;
