@@ -4,7 +4,7 @@
     <div class="form-group">
         <input #emailInput formControlName="email" class="form-control" placeholder="email" autofocus>
         <ap-vmessage 
-            *ngIf="signupForm.get('email').errors?.required && form.submitted"
+            *ngIf="signupForm.get('email').errors?.required && (form.submitted || signupForm.get('email').touched)"
             text="Email is required!">
         </ap-vmessage>
         <ap-vmessage 
@@ -16,7 +16,7 @@
     <div class="form-group">
         <input formControlName="fullName" class="form-control" placeholder="full name">
         <ap-vmessage 
-            *ngIf="signupForm.get('fullName').errors?.required && form.submitted"
+            *ngIf="signupForm.get('fullName').errors?.required && (form.submitted || signupForm.get('fullName').touched)"
             text="Full name is required!">
         </ap-vmessage>
         <ap-vmessage 
@@ -32,7 +32,7 @@
     <div class="form-group">
         <input formControlName="userName" class="form-control" placeholder="user name">
         <ap-vmessage 
-            *ngIf="signupForm.get('userName').errors?.required && form.submitted"
+            *ngIf="signupForm.get('userName').errors?.required && (form.submitted || signupForm.get('userName').touched)"
             text="User name is required!">
         </ap-vmessage>
         <ap-vmessage 
@@ -58,7 +58,7 @@
     <div class="form-group">
         <input formControlName="password" type="password" class="form-control" placeholder="password">
         <ap-vmessage 
-            *ngIf="signupForm.get('password').errors?.required && form.submitted"
+            *ngIf="signupForm.get('password').errors?.required && (form.submitted || signupForm.get('password').touched)"
             text="Password is required!">
         </ap-vmessage>
         <ap-vmessage 
